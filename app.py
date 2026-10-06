@@ -15,7 +15,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Estilos CSS para diseño corporativo e industrial
 st.markdown("""
     <style>
     .main { background-color: #F8F9FA; }
@@ -25,6 +24,15 @@ st.markdown("""
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         border: 1px solid #E9ECEF;
+    }
+    /* Forzar color oscuro en etiquetas y valores para evitar conflicto con modo oscuro */
+    [data-testid="stMetricLabel"] p {
+        color: #555555 !important;
+        font-weight: 600;
+    }
+    [data-testid="stMetricValue"] div {
+        color: #111111 !important;
+        font-weight: 700;
     }
     .status-badge {
         background-color: #28A745;
