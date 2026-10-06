@@ -116,7 +116,7 @@ with st.sidebar:
 # -----------------------------------------------------------------------------
 col_h1, col_h2 = st.columns([3, 1])
 with col_h1:
-    st.title("🍊 Dashboard Ciberfísico de Monitoreo en Tiempo Real")
+    st.title("🍊 Monitoreo en Tiempo Real 🍊")
     st.caption("Línea de Empaque de Mandarina | Estándar RAMI 4.0 & Industria 4.0")
 with col_h2:
     st.markdown("<br>", unsafe_allow_html=True)
