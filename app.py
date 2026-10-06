@@ -228,30 +228,4 @@ with tab4:
         "Estado": ["Completado", "Completado", "Programado 13:30"]
     })
 
-        # Muestreo de datos de la garra con sensor de presión
-st.subheader("📊 Clasificación por Visión y Sensor de Presión en Garra")
-    
-col1, col2 = st.columns(2)
-    
-with col1:
-        # Gráfico Donut
-    fig_pie = px.pie(
-        df_ia, names="Clase", values="Cantidad_Frutos",
-        color="Clase",
-        color_discrete_map={
-             "Ripe (Apto Exportación)": "#2E7D32",
-             "Unripe (Verde / Tría)": "#FBC02D",
-             "Overripe (Descarte Neumático)": "#C62828"
-        },
-        hole=0.45
-    )
-    st.plotly_chart(fig_pie, use_container_width=True)
-    
-with col2:
-        # Métricas de la Garra Mecatrónica
-    st.metric("Firmeza Promedio en Garra", "4.2 kPa", "Rango Óptimo (3.8 - 4.5 kPa)")
-    st.metric("Precisión del Sensor Táctil", "97.5 %", "4 Puntos de Contacto Flexible")
-        
-        # Tabla resumen de conteo unitario
-    st.dataframe(df_ia[["Clase", "Cantidad_Frutos", "Porcentaje_%"]], use_container_width=True)
-    st.table(df_smed)
+
