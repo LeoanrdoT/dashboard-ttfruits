@@ -91,7 +91,6 @@ df_linea, df_iot, df_ia = load_realtime_data()
 # -----------------------------------------------------------------------------
 with st.sidebar:
     st.image("https://tytfruits.com/wp-content/uploads/2023/08/Logo-jpeg18085.jpg", width=300)
-    st.title("T&T Fruits S.A.C.")
     st.subheader("Sistema Ciberfísico - Mandarina")
     st.markdown("---")
     
