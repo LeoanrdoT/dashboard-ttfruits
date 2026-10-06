@@ -170,9 +170,10 @@ with tab1:
         fig_tp.update_layout(height=380, showlegend=False, margin=dict(l=20, r=20, t=30, b=20))
         st.plotly_chart(fig_tp, use_container_width=True)
 
-# TAB 2: INSPECCIÓN EDGE AI
+# TAB 2: INSPECCIÓN EDGE AI Y GARRA TÁCTIL
 with tab2:
     col_t2_a, col_t2_b = st.columns([1, 1])
+    
     with col_t2_a:
         st.subheader("Distribución de Selección de Mandarinas")
         fig_pie = px.pie(
@@ -190,49 +191,28 @@ with tab2:
         st.plotly_chart(fig_pie, use_container_width=True)
 
     with col_t2_b:
-        st.subheader("Parámetros del Sistema de Inferencia Borde")
-        st.info("**Modelo Activo:** Custom CNN (3 Capas Convolucionales)")
+        st.subheader("Parámetros del Sistema Ciberfísico Borde")
+        st.info("**Inspección Óptica:** Custom CNN (3 Capas Convolucionales, 42 ms/fruto)")
+        st.info("**Inspección Táctil:** Garra Manipuladora con Sensores de Presión Flexibles (FSIMS)")
+        
         st.markdown("""
-        * **Accuracy Global de Prueba:** 99.0%
-        * **Latencia Promedio por Fruto:** 42 ms (> 24 frutos/segundo)
+        * **Accuracy Global Óptica + Táctil:** 99.0% (Visión) / 97.5% (Sensor Táctil)
+        * **Firmeza Promedio Registrada (Garra):** 4.2 kPa (Rango seguro de no-daño)
         * **Explicabilidad Visual (XAI):** Módulo LIME activo (Superpíxeles de croma)
-        * **Fuerza de Expulsión Neumática:** 3.8 N (Límite de seguridad ≤ 4.0 N)
+        * **Fuerza de Expulsión Neumática:** 3.8 N (Límite seguro ≤ 4.0 N)
         * **Deformación Máxima en Pericarpio:** 0.068 mm (Previene *Penicillium digitatum*)
         """)
-        st.success("✅ **Lazo Ciberfísico:** Inferencia en Python ➔ MQTT ➔ PLC Siemens S7-1200 ➔ Actuador Neumático")
+        
+        st.success("✅ **Lazo Ciberfísico:** Visión + Garra Táctil ➔ MQTT ➔ PLC Siemens S7-1200 ➔ Expulsión Neumática")
 
-    # Muestreo de datos de la garra con sensor de presión
-    st.subheader("📊 Clasificación por Visión y Sensor de Presión en Garra")
-        
-    col1, col2 = st.columns(2)
-        
-    with col1:
-            # Gráfico Donut
-        fig_pie = px.pie(
-            df_ia, names="Clase", values="Cantidad_Frutos",
-            color="Clase",
-            color_discrete_map={
-                 "Ripe (Apto Exportación)": "#2E7D32",
-                 "Unripe (Verde / Tría)": "#FBC02D",
-                 "Overripe (Descarte Neumático)": "#C62828"
-            },
-            hole=0.45
-        )
-        st.plotly_chart(fig_pie, use_container_width=True)
-    
-with col2:
-        # Métricas de la Garra Mecatrónica
-    st.metric("Firmeza Promedio en Garra", "4.2 kPa", "Rango Óptimo (3.8 - 4.5 kPa)")
-    st.metric("Precisión del Sensor Táctil", "97.5 %", "4 Puntos de Contacto Flexible")
-        
-        # Tabla resumen de conteo unitario
-    st.dataframe(df_ia[["Clase", "Cantidad_Frutos", "Porcentaje_%"]], use_container_width=True)
-    st.table(df_smed)
-
+    st.markdown("---")
+    st.subheader("📊 Muestreo Unificado: Visión y Sensor de Presión en Garra")
+    st.dataframe(df_ia[["Clase", "Cantidad_Frutos", "Porcentaje_%", "Firmeza_kPa"]], use_container_width=True)
 
 # TAB 3: TELEMETRÍA IOT Y TPM
 with tab3:
-    st.subheader("Monitoreo de Vibración RMS en Rodamientos de Faja (ISO 10816)")
+    st.subheader("Monitoreo de Vibración RMS en Rodamientos de Faja Transportadora (ISO 10816)")
+    
     fig_iot = go.Figure()
     fig_iot.add_trace(go.Scatter(
         x=df_iot["Tiempo"], y=df_iot["Vibracion_RMS_mm_s"],
@@ -242,7 +222,12 @@ with tab3:
     fig_iot.add_hline(y=2.8, line_dash="dash", line_color="red", annotation_text="Límite Alerta TPM ISO 10816 (2.8 mm/s RMS)")
     fig_iot.update_layout(height=350, xaxis_title="Hora/Minuto", yaxis_title="Vibración RMS (mm/s)", margin=dict(l=20, r=20, t=30, b=20))
     st.plotly_chart(fig_iot, use_container_width=True)
-
+    
+    col_t3_a, col_t3_b = st.columns(2)
+    with col_t3_a:
+        st.success("🟢 **Estado Mecánico de Accionamiento:** Operación Normal")
+    with col_t3_b:
+        st.info(f"🌡️ **Temperatura Promedio de Rodamiento:** {df_iot['Temperatura_C'].mean():.1f} °C")
 # TAB 4: SMED Y EVENTOS
 # TAB 4: SMED Y EVENTOS
 with tab4:
