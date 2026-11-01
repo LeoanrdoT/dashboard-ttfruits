@@ -11,3 +11,6 @@ Fecha,Hora,Clasificacion,Confianza_Pct,Latencia_ms,Accion_PLC
 2026-11-01,14:58:09.811,Defect,100.0,814.87,Expulsado_Piston_4N
 2026-11-01,14:58:39.575,Defect,100.0,803.74,Expulsado_Piston_4N
 2026-11-01,14:59:01.534,Defect,100.0,800.13,Expulsado_Piston_4N
+2026-11-01,20:04:14.345,Defect,100.0,804.12,Expulsado_Piston_4N
+2026-11-01,15:04:23.821,Defect,100.0,837.75,Expulsado_Piston_4N
+2026-11-01,15:04:32.514,Defect,100.0,815.13,Expulsado_Piston_4N
