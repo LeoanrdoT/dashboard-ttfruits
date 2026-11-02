@@ -1,9 +1,5 @@
 Fecha,Hora,Clasificacion,Confianza_Pct,Latencia_ms,Accion_PLC
-2026-11-02,17:36:28.598,Defect,100.0,874.99,Expulsado_Piston_4N
-2026-11-02,12:36:57.556,Unripe,100.0,604.05,Aprobado_Faja
-2026-11-02,12:38:06.906,Defect,100.0,609.26,Expulsado_Piston_4N
-2026-11-02,12:38:38.231,Defect,75.09,1350.59,Expulsado_Piston_4N
-2026-11-02,12:39:02.979,Unripe,100.0,734.13,Aprobado_Faja
-2026-11-02,12:39:26.688,Defect,56.35,770.17,Expulsado_Piston_4N
-2026-11-02,12:39:39.161,Defect,83.4,604.44,Expulsado_Piston_4N
-2026-11-02,12:40:30.562,Defect,84.95,618.15,Expulsado_Piston_4N
+2026-11-02,21:59:33.752,Ripe,52.88,213.18,Aprobado_Faja
+2026-11-02,16:59:58.589,Defect,98.64,217.12,Expulsado_Piston_4N
+2026-11-02,17:00:08.254,Ripe,83.88,215.25,Aprobado_Faja
+2026-11-02,17:00:29.241,Ripe,93.12,209.5,Aprobado_Faja
