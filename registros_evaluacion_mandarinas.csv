@@ -1,5 +1,2 @@
 Fecha,Hora,Clasificacion,Confianza_Pct,Latencia_ms,Accion_PLC
-2026-11-02,21:59:33.752,Ripe,52.88,213.18,Aprobado_Faja
-2026-11-02,16:59:58.589,Defect,98.64,217.12,Expulsado_Piston_4N
-2026-11-02,17:00:08.254,Ripe,83.88,215.25,Aprobado_Faja
-2026-11-02,17:00:29.241,Ripe,93.12,209.5,Aprobado_Faja
+2026-11-22,10:49:19.607,Ripe,94.21,494.77,Aprobado_Faja
